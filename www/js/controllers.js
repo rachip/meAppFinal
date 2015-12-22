@@ -496,3 +496,33 @@ angular.module('your_app_name.controllers', ['ionic', 'ngCordova'])
 
 
 
+
+.controller('MarketSingelCtrl', function($scope, $http, $rootScope, $ionicHistory, $cordovaFileOpener2, $ionicPlatform, allFilesService) {
+
+
+  $scope.goBack = function() {
+    $ionicHistory.goBack();
+  };
+
+		$http({
+	    url: 'http://ec2-52-32-92-71.us-west-2.compute.amazonaws.com/index.php/api/Marketing/getMarketingId', 
+	    method: "GET",
+	    params:  {index:id}, 
+	    headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
+	}).then(function(resp) {
+
+		$scope.properties = [];
+
+		$scope.properties = resp.data;
+
+	
+	}, function(err) {
+	    console.error('ERR', err);
+	});
+
+
+
+})
+
+
+

@@ -110,6 +110,34 @@ padding: 0px;
 
 width: 50%;
 float: left;
-padding: 10px;
+padding: 1.5px;
+
+}
+
+
+.cutImageMark {
+
+    height: 200px;
+    background-size: cover;
+    background-color: #ccc;
+     -moz-box-shadow: rgba(0, 0, 0, 0.8) 0px 0px 256px inset;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.8) 0px 0px 256px inset;
+    box-shadow: rgba(0, 0, 0, 0.8) 0px 0px 256px inset;
+}
+
+.markt-title {
+
+     font: 16px 'Futura Today DemiBold',Arial,sans-serif;
+    display: block;
+    margin: 0 0 5px;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
+    letter-spacing: 0px;
+    position: relative;
+    z-index: 2;
+    color: #fff;
+    bottom: 0;
+    /* top: 156px; */
+    padding: 6px;
+
 
 }

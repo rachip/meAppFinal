@@ -11,21 +11,17 @@
   <ion-tab title="Home" icon-off="ion-ios-home-outline" icon-on="ion-ios-home">
     <ion-nav-view name="tab-dash">
     <ion-content>
-   
-
       <div ng-repeat="propertyImage_item in properties" class="col-50-pre">
-
         <a class="feed-category" ng-click="toggleLeftSideMenu(propertyImage_item.PropertyId, propertyImage_item.PropertyName, propertyImage_item.FileName)">
-          <pre-img ratio="_1_1" helper-class="square-image">
-            <img class="marketImg" ng-src="http://ec2-52-32-92-71.us-west-2.compute.amazonaws.com/uploads/{{propertyImage_item.FileName}}" spinner-on-load>
-          </pre-img>
-          <div class="category-bg"></div>
-          <span class="category-title">{{propertyImage_item.PropertyName}}</span>
+            <div class="cutImageMark" style="background-image: url('http://ec2-52-32-92-71.us-west-2.compute.amazonaws.com/uploads/{{propertyImage_item.FileName}}')">
+            <span class="markt-title">{{propertyImage_item.PropertyName}}</span>
+
+            </div>
         </a>
       </div>
     </div>
-        </ion-content>
-</ion-nav-view>
+     </ion-content>
+  </ion-nav-view>
   </ion-tab>
 
   <!-- Chats Tab -->
