@@ -202,7 +202,7 @@ angular.module('me', [
 
 
 
-   .state('marketing.singel', {
+   .state('marketSingel', {
     url: 'marketing/marketSingel',
     templateUrl: "views/marketing/marketSingel.html",
     controller: 'MarketSingelCtrl'

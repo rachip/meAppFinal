@@ -483,7 +483,7 @@ angular.module('your_app_name.controllers', ['ionic', 'ngCordova'])
   $scope.chooseMarketingProperty = function(propertyId) {
 	  console.log("chooseMarketingProperty function " + propertyId);
 	  var unbind = $rootScope.$broadcast( "ccc", {marketingPropertyId:propertyId} );
-	  $location.path( "/marketing/marketSingel" );
+	  //$location.path( "/marketing/marktSingel" );
   };
 })
 			 
