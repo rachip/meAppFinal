@@ -23,7 +23,7 @@ angular.module('your_app_name.controllers', ['ionic', 'ngCordova'])
 		var arr = str.split("/app/");
 		
 		$http({
-		    url: 'http://ec2-52-32-92-71.us-west-2.compute.amazonaws.com/ci/index.php/api/RequestUpdate', 
+		    url: 'http://ec2-52-32-92-71.us-west-2.compute.amazonaws.com/index.php/api/RequestUpdate', 
 		    method: "POST",
 		    data:  {id:$rootScope.propertyId,
 		    	    table:arr[1]}, 
@@ -60,7 +60,7 @@ angular.module('your_app_name.controllers', ['ionic', 'ngCordova'])
 
 	$scope.submit = function() {       
 	   $http({
-		    url: 'http://ec2-52-32-92-71.us-west-2.compute.amazonaws.com/ci/index.php/api/Login', 
+		    url: 'http://ec2-52-32-92-71.us-west-2.compute.amazonaws.com/index.php/api/Login', 
 		    method: "POST",
 		    data:  {mail:$scope.userDetail.email,
 		    	    password:$scope.userDetail.password}, 
@@ -78,8 +78,7 @@ angular.module('your_app_name.controllers', ['ionic', 'ngCordova'])
 					localStorage.setItem("isAdmin", resp.data["IsAdmin"]);
 					localStorage.setItem("branch", resp.data["BranchId"]);
 					localStorage.setItem("email", $scope.userDetail.email);
-					localStorage.setItem("password", $scope.userDetail.password);
-	
+					localStorage.setItem("password", $scope.userDetail.password);	
 				}
 				else {
 					loginUserType = "client";
@@ -91,11 +90,9 @@ angular.module('your_app_name.controllers', ['ionic', 'ngCordova'])
 			}
 		
 		}, function(err) {
-
 		    $scope.msg = err;
 
 		    console.error('ERR', err);
-
 		})
     };
 })
@@ -116,8 +113,6 @@ angular.module('your_app_name.controllers', ['ionic', 'ngCordova'])
 
 //properties Ctrl
 .controller('PropertiesCtrl', function($scope, $http, $ionicLoading, $ionicSideMenuDelegate, $rootScope)  {
-	//$rootScope.showBtns = false;
-	//console.log($scope.showBtns);
 	$scope.toggleLeftSideMenu = function(id, name, url) {		
 		var unbind = $rootScope.$broadcast( "aaa", {name:name, url:url} );		
 		$rootScope.propertyId = id;
@@ -128,16 +123,16 @@ angular.module('your_app_name.controllers', ['ionic', 'ngCordova'])
     var url;
     var id;
     if(loginUserType == "client") {    	
-    	url = 'http://ec2-52-32-92-71.us-west-2.compute.amazonaws.com/ci/index.php/api/PropertyImage';
+    	url = 'http://ec2-52-32-92-71.us-west-2.compute.amazonaws.com/index.php/api/PropertyImage';
     	id = localStorage.getItem('id');
     }
     else {
     	if(localStorage.getItem('isAdmin') == 1) {    		
-    		url = 'http://ec2-52-32-92-71.us-west-2.compute.amazonaws.com/ci/index.php/api/PropertyImage/getAdminPropertyImage';
+    		url = 'http://ec2-52-32-92-71.us-west-2.compute.amazonaws.com/index.php/api/PropertyImage/getAdminPropertyImage';
     		id = 0;
     	}
     	else {
-    		url = 'http://ec2-52-32-92-71.us-west-2.compute.amazonaws.com/ci/index.php/api/PropertyImage/getUserPropertyImage';
+    		url = 'http://ec2-52-32-92-71.us-west-2.compute.amazonaws.com/index.php/api/PropertyImage/getUserPropertyImage';
     		id = localStorage.getItem('branch');
     	}
     }
@@ -160,11 +155,11 @@ angular.module('your_app_name.controllers', ['ionic', 'ngCordova'])
 
 // PurchaseAndSaleCtrl
 .controller('PurchaseAndSaleCtrl', function($scope, $rootScope, $log, $location, $http, $ionicLoading, $stateParams, FileService, allFilesService) {
-	//$rootScope.showBtns = true;
+
 	console.log($scope.showBtns);
 	$scope.getData = function() {
 		$http({
-		    url: 'http://ec2-52-32-92-71.us-west-2.compute.amazonaws.com/ci/index.php/api/PurchaseAndSale', 
+		    url: 'http://ec2-52-32-92-71.us-west-2.compute.amazonaws.com/index.php/api/PurchaseAndSale', 
 		    method: "GET",
 		    params:  {index: propertyId}, 
 		    headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
@@ -211,10 +206,10 @@ angular.module('your_app_name.controllers', ['ionic', 'ngCordova'])
 
 //ClosingCtrl
 .controller('ClosingCtrl', function($scope, $rootScope, $http, $ionicLoading, FileService, allFilesService) {	
-	//$rootScope.showBtns = true;
+
 	$scope.getData = function() {
 		$http({
-		    url: 'http://ec2-52-32-92-71.us-west-2.compute.amazonaws.com/ci/index.php/api/Closing', 
+		    url: 'http://ec2-52-32-92-71.us-west-2.compute.amazonaws.com/index.php/api/Closing', 
 		    method: "GET",
 		    params:  {index:propertyId}, 
 		    headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
@@ -258,10 +253,10 @@ angular.module('your_app_name.controllers', ['ionic', 'ngCordova'])
 
 //RenovationCtrl
 .controller('RenovationCtrl', function($scope, $rootScope, $http, $ionicLoading, FileService, allFilesService) {	
-	///$rootScope.showBtns = true;
+
 	$scope.getData = function() {
 		$http({
-		    url: 'http://ec2-52-32-92-71.us-west-2.compute.amazonaws.com/ci/index.php/api/Renovation', 
+		    url: 'http://ec2-52-32-92-71.us-west-2.compute.amazonaws.com/index.php/api/Renovation', 
 		    method: "GET",
 		    params:  {index:propertyId}, 
 		    headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
@@ -308,10 +303,10 @@ angular.module('your_app_name.controllers', ['ionic', 'ngCordova'])
 
 //LeasingCtrl
 .controller('LeasingCtrl', function($scope, $rootScope, $http, $ionicLoading, FileService, allFilesService) {	
-	//$rootScope.showBtns = true;
+
 	$scope.getData = function() {
 		$http({
-		    url: 'http://ec2-52-32-92-71.us-west-2.compute.amazonaws.com/ci/index.php/api/Leasing', 
+		    url: 'http://ec2-52-32-92-71.us-west-2.compute.amazonaws.com/index.php/api/Leasing', 
 		    method: "GET",
 		    params:  {index:propertyId}, 
 		    headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
@@ -354,10 +349,10 @@ angular.module('your_app_name.controllers', ['ionic', 'ngCordova'])
 
 //OccupiedCtrl
 .controller('OccupiedCtrl', function($scope, $rootScope, $http, $ionicLoading, FileService, allFilesService) {	
-	//$rootScope.showBtns = true;
+
 	$scope.getData = function() {
 		$http({
-		    url: 'http://ec2-52-32-92-71.us-west-2.compute.amazonaws.com/ci/index.php/api/Occupied', 
+		    url: 'http://ec2-52-32-92-71.us-west-2.compute.amazonaws.com/index.php/api/Occupied', 
 		    method: "GET",
 		    params:  {index:propertyId}, 
 		    headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
@@ -399,10 +394,10 @@ angular.module('your_app_name.controllers', ['ionic', 'ngCordova'])
 
 //EvictionCtrl
 .controller('EvictionCtrl', function($scope, $rootScope, $timeout, $http, $ionicLoading, $cordovaFileOpener2, FileService, allFilesService) {
-	//$rootScope.showBtns = true;
+
 	$scope.getData = function() {
 		$http({
-		    url: 'http://ec2-52-32-92-71.us-west-2.compute.amazonaws.com/ci/index.php/api/Eviction', 
+		    url: 'http://ec2-52-32-92-71.us-west-2.compute.amazonaws.com/index.php/api/Eviction', 
 		    method: "GET",
 		    params:  {index:propertyId}, 
 		    headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
@@ -442,14 +437,13 @@ angular.module('your_app_name.controllers', ['ionic', 'ngCordova'])
 })
 
 .controller('ShowFilesCtrl', function($scope, $rootScope, $cordovaFileOpener2, $ionicPlatform, allFilesService) {
-	//$rootScope.showBtns = false;
 
 	$scope.openPDF = function() {
 		
 		window.open('http://shturem.net/images/news/82222_news_21082015_4995.pdf', '_system', 'location=no');
 
 	    $cordovaFileOpener2.open(
-	        'http://ec2-52-32-92-71.us-west-2.compute.amazonaws.com/ci/uploads/1449492936doxigen.pdf‏', // Any system location, you CAN'T use your appliaction assets folder
+	        'http://ec2-52-32-92-71.us-west-2.compute.amazonaws.com/uploads/1449492936doxigen.pdf‏', // Any system location, you CAN'T use your appliaction assets folder
 	        'application/pdf'
 	    ).then(function() {
 	        console.log('Success');
@@ -465,64 +459,45 @@ angular.module('your_app_name.controllers', ['ionic', 'ngCordova'])
 	});
 })
 
-
-
 .controller('MarketingCtrl', function($scope, $http, $rootScope, $ionicHistory, $cordovaFileOpener2, $ionicPlatform, allFilesService) {
 
-
   $scope.goBack = function() {
-    $ionicHistory.goBack();
+	  $ionicHistory.goBack();
   };
 
-		$http({
-	    url: 'http://ec2-52-32-92-71.us-west-2.compute.amazonaws.com/index.php/api/Marketing', 
-	    method: "GET",
-	    //params:  {index:id}, 
-	    headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
-	}).then(function(resp) {
+  $http({
+	  url: 'http://ec2-52-32-92-71.us-west-2.compute.amazonaws.com/index.php/api/Marketing', 
+	  method: "GET",
+	  headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
+  }).then(function(resp) {
 
 		$scope.properties = [];
 
 		$scope.properties = resp.data;
-
 	
 	}, function(err) {
 	    console.error('ERR', err);
 	});
-
-
-
 })
-
-
-
 
 .controller('MarketSingelCtrl', function($scope, $http, $rootScope, $ionicHistory, $cordovaFileOpener2, $ionicPlatform, allFilesService) {
 
-
   $scope.goBack = function() {
-    $ionicHistory.goBack();
+	  $ionicHistory.goBack();
   };
 
-		$http({
-	    url: 'http://ec2-52-32-92-71.us-west-2.compute.amazonaws.com/index.php/api/Marketing/getMarketingId', 
-	    method: "GET",
-	    params:  {index:id}, 
-	    headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
+  $http({
+	  url: 'http://ec2-52-32-92-71.us-west-2.compute.amazonaws.com/index.php/api/Marketing/getMarketingId', 
+	  method: "GET",
+	  params:  {index:id}, 
+	  headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
 	}).then(function(resp) {
 
 		$scope.properties = [];
 
 		$scope.properties = resp.data;
 
-	
 	}, function(err) {
 	    console.error('ERR', err);
 	});
-
-
-
 })
-
-
-
