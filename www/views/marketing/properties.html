@@ -1,40 +1,62 @@
 
 
 <div class="bar bar-header bar-balanced">
-  <h1 class="title">bar-balanced</h1>
+  <h1 class="title">dashboard</h1>
+  <button class="button" ng-click="goBack()">Back</button>
 </div>
 
-<ion-tabs class="tabs-icon-top tabs-color-active-positive">
+<ion-tabs class="tabs-icon-top my-tabs" >
 
   <!-- Dashboard Tab -->
-  <ion-tab title="Status" icon-off="ion-ios-pulse" icon-on="ion-ios-pulse-strong" href="#/tab/dash">
+  <ion-tab title="Home" icon-off="ion-ios-home-outline" icon-on="ion-ios-home">
     <ion-nav-view name="tab-dash">
+    <ion-content>
+   
 
+      <div ng-repeat="propertyImage_item in properties" class="col-50-pre">
 
-    test1
-
-
+        <a class="feed-category" ng-click="toggleLeftSideMenu(propertyImage_item.PropertyId, propertyImage_item.PropertyName, propertyImage_item.FileName)">
+          <pre-img ratio="_1_1" helper-class="square-image">
+            <img class="marketImg" ng-src="http://ec2-52-32-92-71.us-west-2.compute.amazonaws.com/uploads/{{propertyImage_item.FileName}}" spinner-on-load>
+          </pre-img>
+          <div class="category-bg"></div>
+          <span class="category-title">{{propertyImage_item.PropertyName}}</span>
+        </a>
+      </div>
+    </div>
+        </ion-content>
 </ion-nav-view>
   </ion-tab>
 
   <!-- Chats Tab -->
 
  <!-- Account Tab -->
-  <ion-tab title="Account" icon-off="ion-ios-gear-outline" icon-on="ion-ios-gear" href="#/tab/account">
+  <ion-tab title="Favorite" icon-off="ion-heart" icon-on="ion-heart">
     <ion-nav-view name="tab-account">
 
 
-     test1
+     <ion-content class="has-header">
+
+
+     <h1> this is a simple test </h1>
+     <h1> this is a simple test </h1>
+     <h1> this is a simple test </h1>
+     <h1> this is a simple test </h1>
+     <h1> this is a simple test </h1>
+
+         
+        </ion-content>
+
 
 
 </ion-nav-view>
   </ion-tab>
 
   <!-- Account Tab -->
-  <ion-tab title="Account" icon-off="ion-ios-gear-outline" icon-on="ion-ios-gear" href="#/tab/account">
+  <ion-tab title="Ask Me" icon-off="ion-chatbubble" icon-on="ion-chatbubble-working">
     <ion-nav-view name="tab-account">
 
-     test1
+       <h1> this is a simple test </h1>
 
 
 </ion-nav-view>

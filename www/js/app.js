@@ -74,6 +74,9 @@ angular.module('me', [
 })
 
 .config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
+
+ $ionicConfigProvider.tabs.position('top');
+
   $stateProvider
 
   //INTRO

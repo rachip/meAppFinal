@@ -79,6 +79,8 @@ padding: 0px;
     width: 100%;
     height: auto;
 
+}
+
 .loginLogo {
 	width: 100%;
 }
@@ -87,5 +89,27 @@ padding: 0px;
     width: 194px;
     margin: 0px auto;
     display: block;
+
+}
+
+.row {
+
+padding: 0px;
+
+}
+
+.marketImg {
+
+ width: 100%;
+ height: auto;
+
+
+}
+
+.col-50-pre {
+
+width: 50%;
+float: left;
+padding: 10px;
 
 }
