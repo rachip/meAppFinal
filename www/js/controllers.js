@@ -459,12 +459,12 @@ angular.module('your_app_name.controllers', ['ionic', 'ngCordova'])
 	});
 })
 
-.controller('MarketingCtrl', function($scope, $http, $rootScope, $ionicHistory, $cordovaFileOpener2, $ionicPlatform, allFilesService) {
+.controller('MarketingCtrl', function($scope, $http, $rootScope, $ionicHistory, $ionicPlatform, $location) {
 
   $scope.goBack = function() {
 	  $ionicHistory.goBack();
   };
-
+  
   $http({
 	  url: 'http://ec2-52-32-92-71.us-west-2.compute.amazonaws.com/index.php/api/Marketing', 
 	  method: "GET",
@@ -474,17 +474,29 @@ angular.module('your_app_name.controllers', ['ionic', 'ngCordova'])
 		$scope.properties = [];
 
 		$scope.properties = resp.data;
-	
+		
 	}, function(err) {
 	    console.error('ERR', err);
 	});
-})
+  
 
-.controller('MarketSingelCtrl', function($scope, $http, $rootScope, $ionicHistory, $cordovaFileOpener2, $ionicPlatform, allFilesService) {
+  $scope.chooseMarketingProperty = function(propertyId) {
+	  console.log("chooseMarketingProperty function " + propertyId);
+	  var unbind = $rootScope.$broadcast( "ccc", {marketingPropertyId:propertyId} );
+	  $location.path( "/marketing/marketSingel" );
+  };
+})
+			 
+.controller('MarketSingelCtrl', function($scope, $http, $rootScope, $ionicHistory, $ionicPlatform) {
 
   $scope.goBack = function() {
 	  $ionicHistory.goBack();
   };
+  
+  $scope.$on( "ccc", function(event, data) {
+	  console.log("marketingPropertyId " + data.marketingPropertyId);
+	  //$scope.marketingPropertyId = data.marketingPropertyId;
+  });
 
   $http({
 	  url: 'http://ec2-52-32-92-71.us-west-2.compute.amazonaws.com/index.php/api/Marketing/getMarketingId', 

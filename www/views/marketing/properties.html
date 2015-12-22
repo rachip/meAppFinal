@@ -12,7 +12,7 @@
     <ion-nav-view name="tab-dash">
     <ion-content>
       <div ng-repeat="propertyImage_item in properties" class="col-50-pre">
-        <a class="feed-category" ng-click="toggleLeftSideMenu(propertyImage_item.PropertyId, propertyImage_item.PropertyName, propertyImage_item.FileName)">
+        <a class="feed-category" ng-click="chooseMarketingProperty(propertyImage_item.PropertyId)">
             <div class="cutImageMark" style="background-image: url('http://ec2-52-32-92-71.us-west-2.compute.amazonaws.com/uploads/{{propertyImage_item.FileName}}')">
             <span class="markt-title">{{propertyImage_item.PropertyName}}</span>
 
