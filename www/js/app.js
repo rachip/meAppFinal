@@ -191,18 +191,15 @@ angular.module('me', [
     }
   })
 
-
   //marketing part
-
-   .state('marketing', {
+.state('marketing', {
     url: 'marketing/properties',
     templateUrl: "views/marketing/properties.html",
     controller: 'MarketingCtrl'
   })
 
 
-
-   .state('marketSingel', {
+.state('marketSingel', {
     url: 'marketing/marketSingel',
     templateUrl: "views/marketing/marketSingel.html",
     controller: 'MarketSingelCtrl'
