@@ -1,20 +1,17 @@
 /* Empty. Add your own CSS if you like */
 .incorectLogin {
 	color: white;
-
 	color: red;
     font-weight: bold;
     margin-top: 15px;
     margin-left: 3px;
 }
 
-.updateMeBth {
-	border-color: white;	
-}
-
-.bar.app-top-bar .button.updateMeBth {
-	font-weight: bold;
-	color: black !important;
+img.updateMeBth {
+	background-image: url("img/UpdateMeBtn.png");
+	height: 52px;
+    margin-top: -9px;
+    margin-right: -10px;
 }
 
 .pointer {
@@ -26,13 +23,8 @@
     width: 100%;
     overflow: hidden	
 }
-
-
 .rowMainScreen {
-
-padding: 0px;
-
-
+	padding: 0px;
 }
 
 .loginLogo {
@@ -40,7 +32,7 @@ padding: 0px;
     margin-top: 41px;
 }
 
-.loginLogo img{
+.loginLogo img {
     width: 271px;
     margin: 0px auto;
     display: block;
@@ -78,56 +70,44 @@ padding: 0px;
 .mainProperImgLogIn img {
     width: 100%;
     height: auto;
-
 }
 
 .loginLogo {
 	width: 100%;
 }
 
-.loginLogo img{
+.loginLogo img {
     width: 194px;
     margin: 0px auto;
     display: block;
-
 }
 
 .row {
-
-padding: 0px;
-
+	padding: 0px;
 }
 
 .marketImg {
-
- width: 100%;
- height: auto;
-
-
+	 width: 100%;
+	 height: auto;
 }
 
 .col-50-pre {
-
-width: 50%;
-float: left;
-padding: 1.5px;
-
+	width: 50%;
+	float: left;
+	padding: 1.5px;
 }
 
-
 .cutImageMark {
-
     height: 200px;
     background-size: cover;
     background-color: #ccc;
-     -moz-box-shadow: rgba(0, 0, 0, 0.8) 0px 0px 256px inset;
+    -moz-box-shadow: rgba(0, 0, 0, 0.8) 0px 0px 256px inset;
     -webkit-box-shadow: rgba(0, 0, 0, 0.8) 0px 0px 256px inset;
     box-shadow: rgba(0, 0, 0, 0.8) 0px 0px 256px inset;
 }
 
 .markt-title {
-
-     font: 16px 'Futura Today DemiBold',Arial,sans-serif;
+    font: 16px 'Futura Today DemiBold',Arial,sans-serif;
     display: block;
     margin: 0 0 5px;
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
@@ -138,6 +118,4 @@ padding: 1.5px;
     bottom: 0;
     /* top: 156px; */
     padding: 6px;
-
-
 }
