@@ -13,7 +13,9 @@
     <ion-content>
       <div ng-repeat="propertyImage_item in properties" class="col-50-pre">
         <a class="feed-category" ui-sref="marketSingel" ng-click="chooseMarketingProperty(propertyImage_item.PropertyId)">
-            <div class="cutImageMark" style="background-image: url('http://ec2-52-32-92-71.us-west-2.compute.amazonaws.com/uploads/{{propertyImage_item.FileName}}')">
+            <div class="cutImageMark">
+               <pre-img ratio="_1_1" helper-class="square-image">
+               <img class="category-image" ng-src="http://ec2-52-32-92-71.us-west-2.compute.amazonaws.com/uploads/{{propertyImage_item.FileName}}" spinner-on-load>
             <span class="markt-title">{{propertyImage_item.PropertyName}}</span>
 
             </div>

@@ -99,11 +99,20 @@ img.updateMeBth {
 
 .cutImageMark {
     height: 200px;
-    background-size: cover;
     background-color: #ccc;
     -moz-box-shadow: rgba(0, 0, 0, 0.8) 0px 0px 256px inset;
     -webkit-box-shadow: rgba(0, 0, 0, 0.8) 0px 0px 256px inset;
     box-shadow: rgba(0, 0, 0, 0.8) 0px 0px 256px inset;
+    overflow: hidden;
+    width: 100%;
+    display: block;
+}
+
+.cutImageMark img {
+    height: auto;
+    width: 100%;
+     display: block;
+
 }
 
 .markt-title {
